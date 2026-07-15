@@ -25,7 +25,7 @@ load_dotenv()
 VEHICLE_API_BASE = os.getenv("VEHICLE_API_BASE", "")
 if not VEHICLE_API_BASE:
     raise ValueError("VEHICLE_API_BASE environment variable is missing.")
-PORT            = int(os.getenv("PORT", 5000))
+PORT            = int(os.getenv("PORT", 2929))
 ALLOWED_ORIGIN  = os.getenv("ALLOWED_ORIGIN", "*")
 FLASK_ENV       = os.getenv("FLASK_ENV", "production")
 
