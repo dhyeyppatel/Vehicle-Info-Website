@@ -1,0 +1,32 @@
+# ── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+.env
+backend/.env
+
+# ── Node / npm (root package.json only for scripts) ──────────────
+node_modules/
+npm-debug.log*
+
+# ── OS / Editor ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# ── Logs ────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Render / Cloud ──────────────────────────────────────────────
+.render/

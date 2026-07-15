@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: vehicle-scan-terminal
+    env: python
+    plan: free
+
+    # Install Python dependencies from the root
+    buildCommand: pip install -r requirements.txt
+
+    # Run with Gunicorn (production WSGI server) — Render sets $PORT automatically
+    startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 30
+
+    envVars:
+      # Required Variables - Set these in the Render Dashboard!
+      - key: VEHICLE_API_BASE
+        sync: false
+      - key: SHRINKEARN_API_KEY
+        sync: false
+      - key: MONGO_URI
+        sync: false
+
+      # Set to production (disables Flask debug mode)
+      - key: FLASK_ENV
+        value: production
+
+      # Restrict CORS to your own domain after deployment
+      - key: ALLOWED_ORIGIN
+        value: "*"

@@ -1,0 +1,12 @@
+{
+  "name": "vehicle-scan-terminal",
+  "version": "2.0.0",
+  "description": "Monorepo: secure Python backend proxy + hacker-themed frontend for Indian vehicle lookup",
+  "scripts": {
+    "dev": "python -m http.server 8765 --directory frontend",
+    "server": "cd backend && python app.py"
+  },
+  "repository": {
+    "type": "git"
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | VehicleScan Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .doc-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: var(--surface-hi);
+      border: 1px solid var(--green);
+      padding: 32px;
+      box-shadow: 0 0 14px var(--green-glow);
+    }
+    .doc-container h1 {
+      color: var(--green);
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .doc-container h2 {
+      color: var(--amber);
+      font-size: 16px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .doc-container p, .doc-container li {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .doc-container ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <div class="page-wrap">
+    <header role="banner">
+      <div class="logo" aria-label="VehicleScan Terminal">VEHICLE_SCAN_v2.0</div>
+      <div class="header-badges" aria-hidden="true">
+        <a href="index.html" style="color:var(--text); text-decoration:none;" class="badge">&lt; BACK_TO_SCANNER</a>
+      </div>
+    </header>
+
+    <main role="main">
+      <div class="doc-container">
+        <h1>Privacy Policy</h1>
+        
+        <h2>1. Information We Collect</h2>
+        <p><strong>Tokens:</strong> We generate and store anonymous UUID tokens in our database to manage access limits (e.g., 5 searches per token). These tokens are not tied to any personally identifiable information (PII).</p>
+        <p><strong>Protected Vehicles:</strong> If you use our "Protect Info" feature, we store the vehicle Registration Number to enforce data hiding. This ensures your PII is blocked from public searches on this platform.</p>
+
+        <h2>2. Data Processing</h2>
+        <p>When you initiate a scan, your search query is processed by our backend server and forwarded to a public API. We do not permanently store the results of these searches. Data is held in memory temporarily for caching purposes (to reduce upstream API load) and then discarded.</p>
+
+        <h2>3. Data Protection Feature</h2>
+        <p>We respect user privacy. By visiting the "Protect Info" page, users can verify their ownership via their Mobile Number. Once verified, the backend actively redacts sensitive information (Owner Name, Father Name, Mobile Number) from future search queries related to that vehicle.</p>
+
+        <h2>4. Third-Party Links</h2>
+        <p>Our platform relies on third-party link shorteners to generate access tokens. Once you click "Get Access Token", you are subject to the privacy policy of the third-party provider (ShrinkEarn). We recommend reviewing their policies.</p>
+
+        <h2>5. Analytics and Logging</h2>
+        <p>Our servers may temporarily log IP addresses and request paths for security and rate-limiting purposes. These logs are automatically rotated and deleted.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

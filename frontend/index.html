@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VehicleScan Terminal | Indian Vehicle Information Lookup</title>
+  <meta name="description" content="Instantly lookup Indian vehicle registration details, owner information, insurance status, challan records and more. Fast, accurate, hacker-themed terminal interface." />
+  <meta name="keywords" content="Indian vehicle lookup, vehicle registration, RC details, challan check, insurance check, vehicle owner, RTO" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="VehicleScan Terminal | Indian Vehicle Information" />
+  <meta property="og:description" content="Instantly lookup RC details, insurance, challans and owner info for any Indian vehicle." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Matrix Rain Background (WebGL) -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <div class="page-wrap">
+
+    <header role="banner">
+      <div class="logo" aria-label="VehicleScan Terminal">VEHICLE_SCAN_v2.0</div>
+      <div class="header-badges" aria-hidden="true">
+        <span class="badge live">&#9899; LIVE</span>
+        <span class="badge">INDIA_DB</span>
+        <span class="badge">SECURE</span>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="search-section" aria-label="Vehicle lookup">
+        <div class="prompt-label">
+          &gt; <span>SYSTEM_LINK:</span> VEHICLE_DATABASE_ACCESS // ENTER_REGISTRATION_NUMBER
+        </div>
+        
+        <!-- Token Overlay / Block -->
+        <div id="tokenBlock" style="display:none; text-align:center; padding: 24px; border: 1px solid var(--green); background: var(--surface-hi); margin-bottom: 24px; box-shadow: 0 0 14px var(--green-glow);">
+          <div style="font-size: 13px; margin-bottom: 16px; color: var(--text);">
+            ACCESS RESTRICTED. YOU NEED A VERIFICATION TOKEN TO PROCEED.
+          </div>
+          <button id="getTokenBtn" style="background: transparent; border: 1px solid var(--green); color: var(--green); font-family: var(--font); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 12px 24px; cursor: pointer; transition: all 0.2s;">
+            [ GET ACCESS TOKEN (5 FREE SEARCHES) ]
+          </button>
+        </div>
+
+        <div class="search-bar" role="search" id="searchBarBlock">
+          <div class="search-prefix" aria-hidden="true">&gt;_</div>
+          <input
+            id="vehicleInput"
+            type="text"
+            placeholder="e.g. UK04AP2300"
+            maxlength="12"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            aria-label="Vehicle registration number"
+          />
+          <button id="scanBtn" aria-label="Initiate scan">INITIATE_SCAN</button>
+        </div>
+        
+        <div class="status-bar" aria-live="polite">
+          <span id="statusText">STATUS: IDLE</span>
+          <span id="tokenStatusText" style="color:var(--amber);">SEARCHES LEFT: --</span>
+        </div>
+      </section>
+
+      <div id="warningBar" role="alert" aria-live="assertive"></div>
+
+      <div id="loadingBlock" role="status" aria-label="Loading vehicle data">
+        <div class="loader-text" id="loadingMsg">SCANNING DATABASE...</div>
+        <div class="progress-bar" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div id="errorBlock" role="alert" aria-live="assertive"></div>
+
+      <div id="resultsGrid" aria-label="Vehicle information results"></div>
+
+    </main>
+
+    <footer role="contentinfo">
+      <div>&copy; 2025 VEHICLE_SCAN TERMINAL &mdash; DATA FROM PUBLICLY AVAILABLE SOURCES</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="protect.html" style="color:var(--amber);">PROTECT INFO</a>
+        <a href="disclaimer.html">DISCLAIMER</a>
+        <a href="privacy.html">PRIVACY</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
